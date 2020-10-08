@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cave-enki-frontend"
+    }
+  },
+  "defaultProject": "cave-enki-frontend",
+  "cli": {
+    "analytics": "756f3425-acdc-48f9-b900-743613e0265f"
+  }
 }
