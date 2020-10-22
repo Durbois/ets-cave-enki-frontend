@@ -10,8 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [ProductsComponent],
   imports: [
     CommonModule,
-    ProductsRoutingModule,
-    HttpClientModule
+    ProductsRoutingModule
   ]
 })
 export class ProductsModule { }

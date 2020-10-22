@@ -31,7 +31,7 @@ describe('ProductsService', () => {
         unitPrice: 12.4,
         boxPrice: 1000,
         ingredients: 'arome;cafe'
-    }
+      }
     ];
 
     service.findAllProducts().subscribe(products => {
