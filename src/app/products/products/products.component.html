@@ -6,8 +6,9 @@
         <div class="product-selection-item clearfix">
           <div class="product-image-content">
             <div class="product-image">
-              <a [routerLink]="['/produit', p.id]">
-                <img src="" alt="">
+              <a [routerLink]="['/product', p.id]">
+                <img src="https://www.bordeaux.com/wp-content/uploads/2020/05/De-Luze-2019-75x300.png"
+                 alt="">
               </a>
             </div>
           </div>
@@ -18,7 +19,8 @@
               </a>
             </h2>
             <h3 class="field-appelation">{{p.contentType}}</h3>
-            <a class="btn outline brown small" href="" title="">Discover</a>
+            <a class="btn outline brown small" [routerLink]="['/produit', p.id]"
+             [title]="p.name">Discover</a>
           </div>
         </div>
       </div>
