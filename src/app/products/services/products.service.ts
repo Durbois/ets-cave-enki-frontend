@@ -24,6 +24,11 @@ export class ProductsService {
             .pipe(catchError(this.handleError));
   }
 
+  public findProductById(id: string): Observable<any> {
+    return this.http.get<Product>(`${this.PRODUCTS_API}/item/${id}`, this.httpOptions)
+           .pipe(catchError(this.handleError));
+  }
+
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
