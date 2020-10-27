@@ -3,6 +3,25 @@
 :host {
   .nav-container {
     min-height: 90px;
-    background: linear-gradient(90deg, @red-wine 0%, @white-wine 100%);
+    background: linear-gradient(90deg, @white-wine 0%, @red-wine 100%);
+  }
+
+  .header__fixed {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    padding: 0;
+  }
+
+  .nav-item {
+    position: relative;
+    float: none;
+    width: 100%;
+    border-bottom: 1px solid #666;
+    padding-left: 16px;
+    height: auto;
+    margin: 0;
   }
 }
