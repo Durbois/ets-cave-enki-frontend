@@ -1,57 +1,29 @@
 
 :host {
 
-  a {
-    color: #337ab7;
-    text-decoration: none;
-    background-color: transparent;
-    transition: background-color 150ms, color 150ms;
-
-    &:hover {
-      color: #003380;
-      text-decoration: underline;
-    }
+  .product-view-list {
+    margin-top: 90px;
   }
 
-  .product-header {
-    text-transform: uppercase;
-    text-align: center;
-    color: #666;
-    margin-bottom: 30px;
+  .product-info {
+    background: #EAE4D8;
+    padding: 56px 5px 45px;
   }
 
   .product-item {
-    padding: 0;
+    border-radius: 0;
+    border: 0;
   }
 
-  .product-selection-item {
-    text-align: center;
-    margin-top: 20px;
+  .product-item:nth-child(odd) .product-info {
+    background: #faf7f2;
   }
 
-  .product-image-content {
-    width: auto;
-    height: 246px;
-    line-height: 246px;
-    overflow: hidden;
-    margin: 0 auto;
+  .product-item:last-child {
+    margin-bottom: 30px;
   }
 
-  .wrapper {
-    padding-top: 100px;
-    padding-right: 0;
-    padding-left: 0;
-    padding-bottom: 0;
-  }
-
-  .container {
-    padding: 0px 15px !important;
-    max-width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .product-image img {
+  .product-image {
     display: block;
     width: auto;
     max-width: 100%;
@@ -60,63 +32,19 @@
     margin-left: 127px;
   }
 
-  .product-item:nth-child(odd) .product-info {
-    background-color: #faf7f2;
+  .product-name-link {
+    color: #2C2C2C;
   }
 
-  .product-info {
-    padding: 56px 5px 45px 5px;
-    height: 250px;
-    margin-top: 15px;
+  .product-contenttype {
+    color: #93CD3A;
+    margin-bottom: 32px;
   }
 
-  h2.product-title {
-    line-height: 1em;
-    margin: 0 auto;
-    padding: 0 20px;
-    font-size: 32px;
-  }
-
-  h2.product-title a {
-    color: #2c2c2c;
-    text-decoration: none;
-    font-size: 32px;
-  }
-
-  h3.field-appelation {
-    margin: 10px 0 35px 0;
-    text-transform: uppercase;
-    font: 14px;
-    color: #93cd3a !important;
-  }
-
-  .btn {
-    position: absolute;
-    bottom: 38px;
-    left: 50%;
-    margin-left: -77px;
-    color: #b3a69c;
+  .product-btn-link {
+    color: #2C2C2C;
+    background: #B3A69C;
     border: 2px solid #d7cec9;
-  }
-
-  .btn:not([disabled]):not(.disabled) {
-    cursor: pointer;
-  }
-
-  .btn.small {
     padding: 8px 35px;
-  }
-
-  .btn {
-    text-transform: uppercase;
-    border-radius: 0;
-    letter-spacing: 3px;
-    white-space: inherit;
-  }
-
-  .clearfix::after {
-    display: block;
-    clear: both;
-    content: "";
   }
 }
