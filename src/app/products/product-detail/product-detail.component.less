@@ -2,62 +2,66 @@
 
 :host {
 
-  .content {
-    padding: 0px 15px !important;
-    margin-top: 90px;
+  .product-detail {
+    margin-top: 112px;
   }
 
-  .text-content {
-    margin: 15px;
-    padding: 10px;
-    position: relative;
-    display: table-cell;
-    vertical-align: top;
-    width: 100%;
-    background: #faf7f2;
-  }
-
-  .text-content img {
+  .product-image {
     display: block;
-    width: 35%;
-    margin: 0 auto;
+    width: auto;
     max-width: 100%;
-    height: auto;
-    border-style: none;
+    height: 290px;
+    margin-left: 127px;
   }
 
-  .text-content h2 {
+  .product-info {
+    background: #faf7f2;
+    padding-left: 16px;
+    margin-bottom: 24px;
+  }
+
+  .product-item {
+    border-radius: 0;
+    border: 0;
+  }
+
+  .product-name {
     font-size: 50px;
-    font-weight: normal;
-    color: #2c2c2c;
     margin: 5px 0;
-    line-height: 1em;
+    color: #2C2C2C;
   }
 
-  .text-content h3 {
-    font-size: 14px;
-    text-transform: uppercase;
-    margin: 0 0 30px 0;
+  .product-contenttype {
+    color: #B79148;
   }
 
-  .text-content .field-intro {
-    font-size: 18px;
-    color: #6b6a6a;
-    margin: 0 0 30px 0;
+  .product-ingredients {
+
   }
 
-  .text-content .field-intro .table {
-    border-top: 1px solid #ddd;
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1rem;
-    background-color: transparent;
-    border-collapse: collapse;
+  .product-certification-link-title {
+
   }
 
-  .text-content .field-intro .table td {
-    border-top: none;
-    padding: 0px;
-    vertical-align: top
+  .product-ingredients-list {
+    color: #6B6A6A;
+  }
+
+
+  .product-price .product-price-unit-title,
+  .product-price .product-price-box-title {
+    color: #c2b4a9;
+
+    &::before {
+      content: url("../../../assets/icons/money.svg");
+
+    }
+  }
+
+  .product-price .product-price-unit,
+  .product-price .product-price-box {
+    background: #ebe3d8;
+    width: 72px;
+    margin-bottom: 16px;
   }
 }
