@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { Product } from '../models/product';
 import { catchError } from 'rxjs/operators';
@@ -19,8 +19,10 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
 
-  public findAllProducts(): Observable<any> {
-    return this.http.get<Product[]>(`${this.PRODUCTS_API}/all`, this.httpOptions)
+  public findAllProducts(requestParams ?: string): Observable<any> {
+    let params = new HttpParams();
+    params = requestParams != null ? params.append('productTypes=', requestParams) : undefined;
+    return this.http.get<Product[]>(`${this.PRODUCTS_API}/all`, {params})
             .pipe(catchError(this.handleError));
   }
 

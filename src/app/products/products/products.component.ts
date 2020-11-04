@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../models/product';
 import { FormControl } from '@angular/forms';
+import { isEmpty } from 'rxjs/operators';
 
 @Component({
   selector: 'app-products',
@@ -11,7 +12,11 @@ import { FormControl } from '@angular/forms';
 export class ProductsComponent implements OnInit {
 
   toppings = new FormControl();
-  toppingList: string[] = ['WHISKY', 'RED_WINE', 'WHITE_WINE'];
+  productTypes: string[];
+  toppingList: any[] = [
+    {value: 'WHISKY', viewValue: 'Whisky' },
+    {value: 'RED_WINE', viewValue: 'Red wine'},
+    {value: 'WHITE_WINE', viewValue: 'White wine'}];
 
   products: Product[];
 
@@ -19,6 +24,15 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
+  }
+
+  applyChangeDetection(): void {
+    let selection: string = this.toppings.value.toString();
+
+    if (selection !== '') {
+      selection = 'productTypes='.concat(selection.split(',').join('&productTypes='));
+      console.log('Selection: ' + selection);
+    }
   }
 
   getProducts(): void {
