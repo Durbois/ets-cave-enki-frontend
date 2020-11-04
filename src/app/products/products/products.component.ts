@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../models/product';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-products',
@@ -8,6 +9,9 @@ import { Product } from '../models/product';
   styleUrls: ['./products.component.less']
 })
 export class ProductsComponent implements OnInit {
+
+  toppings = new FormControl();
+  toppingList: string[] = ['WHISKY', 'RED_WINE', 'WHITE_WINE'];
 
   products: Product[];
 
@@ -19,7 +23,7 @@ export class ProductsComponent implements OnInit {
 
   getProducts(): void {
     this.productService.findAllProducts().subscribe(products => {
-      console.log('Products: ' + products);
+      console.log('Products: ' + JSON.stringify(products));
       this.products = products;
     }, (err) => {
       console.log('ERR: ' + err);
