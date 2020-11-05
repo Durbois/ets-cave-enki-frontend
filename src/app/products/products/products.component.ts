@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../models/product';
 import { FormControl } from '@angular/forms';

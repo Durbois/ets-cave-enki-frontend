@@ -1,4 +1,17 @@
 
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #B3A69C;
+}
+
+::ng-deep .mat-primary .mat-pseudo-checkbox-checked,
+          .mat-primary .mat-pseudo-checkbox-indeterminate {
+  background: #B3A69C;
+}
+
+/* ::ng-deep .cdk-overlay-pane {
+  top: 172.5px;
+} */
+
 :host {
 
   .product-view-list {
@@ -46,5 +59,27 @@
     background: #B3A69C;
     border: 2px solid #d7cec9;
     padding: 8px 40px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before {
+    height: 0px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-ripple {
+    height: 0px;
+  }
+
+  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: #2C2C2C;
+  }
+
+  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    border: 2px solid #d7cec9;
+    background: #B3A69C;
+  }
+
+  ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow,
+  ::ng-deep .mat-select-arrow {
+    color: #2C2C2C;
   }
 }
