@@ -27,11 +27,19 @@ export class ProductsComponent implements OnInit {
   }
 
   applyChangeDetection(): void {
-    let selection: string = this.toppings.value.toString();
+    const selection: string = this.toppings.value.toString();
 
     if (selection !== '') {
-      selection = 'productTypes='.concat(selection.split(',').join('&productTypes='));
       console.log('Selection: ' + selection);
+      this.productService.findAllProducts(selection).subscribe(products => {
+        console.log('Products: ' + JSON.stringify(products));
+        this.products = products;
+      }, (err) => {
+        console.log('ERR: ' + err);
+      }
+     );
+    } else {
+      this.getProducts();
     }
   }
 

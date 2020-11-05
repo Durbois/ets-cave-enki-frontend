@@ -21,7 +21,14 @@ export class ProductsService {
 
   public findAllProducts(requestParams ?: string): Observable<any> {
     let params = new HttpParams();
-    params = requestParams != null ? params.append('productTypes=', requestParams) : undefined;
+
+    if (requestParams !== undefined) {
+      console.log('REQ: ' + requestParams);
+      requestParams.split(',').forEach(req => {
+        params = params.append('productTypes', req);
+      });
+    }
+
     return this.http.get<Product[]>(`${this.PRODUCTS_API}/all`, {params})
             .pipe(catchError(this.handleError));
   }
