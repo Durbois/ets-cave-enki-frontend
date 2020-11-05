@@ -7,9 +7,9 @@
         </div>
         <div class="text-left product-info">
           <h2 class="product-name">
-              <span>{{product.name}}</span>
+              <span>{{product?.name}}</span>
           </h2>
-          <h3 class="product-contenttype lead">{{product.contentType}}</h3>
+          <h3 class="product-contenttype lead">{{product?.contentType}}</h3>
           <div class="product-certification-link mt-3 mb-3">
               <h4 class="product-certification-link-title"><u>Produit certifie Anor:</u></h4>
               <a class="text-decoration-none" href="http://www.anorcameroun.info/produits-certifies/" target="_blank">
@@ -17,15 +17,15 @@
             </div>
           <div class="product-ingredients mt-3 mb-3">
             <h4 class="font-weight-lighter"><u>Ingredients:</u></h4>
-            <p class="product-ingredients-list">{{product.ingredients}}</p>
+            <p class="product-ingredients-list">{{product?.ingredients}}</p>
           </div>
           <div class="product-price">
             <h3 class="product-price-unit-title">Unit Price</h3>
-            <div class="product-price-unit">{{product.unitPrice}}</div>
+            <div class="product-price-unit">{{product?.unitPrice}}</div>
           </div>
           <div class="product-price">
             <h3 class="product-price-box-title">Box Price</h3>
-            <div class="product-price-box">{{product.boxPrice}}</div>
+            <div class="product-price-box">{{product?.boxPrice}}</div>
           </div>
         </div>
       </div>

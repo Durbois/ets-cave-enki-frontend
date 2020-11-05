@@ -21,7 +21,7 @@ describe('ProductsService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('shoul return products list', () => {
+  it('should return products list', () => {
     const dummyProducts: Product[] = [
       {
         id: 3,
@@ -39,6 +39,29 @@ describe('ProductsService', () => {
       expect(products).toEqual(dummyProducts);
     });
     const request = httpMock.expectOne( `${service.PRODUCTS_API}/all`);
+    expect(request.request.method).toBe('GET');
+    expect(JSON.stringify(request.request.params)).toBe('{"updates":null,"cloneFrom":null,"encoder":{},"map":{}}');
+    request.flush(dummyProducts);
+  });
+
+  it('should filter products list', () => {
+    const dummyProducts: Product[] = [
+      {
+        id: 3,
+        name: 'vinus',
+        contentType: 'CAN',
+        productType: 'WHITE_WINE',
+        unitPrice: 12.4,
+        boxPrice: 1000,
+        ingredients: 'arome;cafe'
+      }
+    ];
+
+    service.findAllProducts('WHITE_WINE').subscribe(products => {
+      expect(products.length).toBe(1);
+      expect(products).toEqual(dummyProducts);
+    });
+    const request = httpMock.expectOne( `${service.PRODUCTS_API}/all?productTypes=WHITE_WINE`);
     expect(request.request.method).toBe('GET');
     request.flush(dummyProducts);
   });

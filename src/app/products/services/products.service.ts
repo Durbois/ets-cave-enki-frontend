@@ -29,6 +29,8 @@ export class ProductsService {
       });
     }
 
+    console.log('Params: ' + JSON.stringify(params));
+
     return this.http.get<Product[]>(`${this.PRODUCTS_API}/all`, {params})
             .pipe(catchError(this.handleError));
   }
