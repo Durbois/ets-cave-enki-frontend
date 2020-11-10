@@ -7,9 +7,17 @@ import { AppComponent } from './app.component';
 import { AngularMaterialModule } from './app-material.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
+// tslint:disable-next-line:typedef
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, '/assets/i18n/', '-lang.json');
+}
 
 @NgModule({
   declarations: [
@@ -23,7 +31,14 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     AppRoutingModule,
     AngularMaterialModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    TranslateModule.forRoot({
+      loader: {
+      provide: TranslateLoader,
+      useFactory: HttpLoaderFactory,
+      deps: [HttpClient]
+      }
+      })
   ],
   providers: [],
   bootstrap: [AppComponent],
