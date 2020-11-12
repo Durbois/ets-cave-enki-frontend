@@ -11,14 +11,14 @@ export class LanguageService {
   initialize(): void {
     this.translate.setDefaultLang('en');
     this.translate.addLangs(['en', 'fr']);
-    this.translate.use('en');
   }
 
-  setTransLanguage(selectLang): void {
+  setCurrentLanguage(selectLang): void {
+    localStorage.setItem('language', selectLang);
     this.translate.use(selectLang);
   }
 
-  getTransLanguage(): string[] {
-    return this.translate.getLangs();
+  getCurrentLanguage(): string {
+    return this.translate.currentLang;
   }
 }
