@@ -16,7 +16,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 // tslint:disable-next-line:typedef
 export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient, '/assets/i18n/', '-lang.json');
+  return new TranslateHttpLoader(httpClient);
 }
 
 @NgModule({
@@ -34,11 +34,14 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     TranslateModule.forRoot({
       loader: {
-      provide: TranslateLoader,
-      useFactory: HttpLoaderFactory,
-      deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
       }
     })
+  ],
+  exports: [
+    TranslateModule
   ],
   providers: [],
   bootstrap: [AppComponent],

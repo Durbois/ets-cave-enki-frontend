@@ -3,6 +3,7 @@ import { ProductsService } from '../services/products.service';
 import { Product } from '../models/product';
 import { FormControl } from '@angular/forms';
 import { isEmpty } from 'rxjs/operators';
+import { LanguageService } from '../../service/language.service';
 
 @Component({
   selector: 'app-products',
@@ -14,15 +15,17 @@ export class ProductsComponent implements OnInit {
   toppings = new FormControl();
   productTypes: string[];
   toppingList: any[] = [
-    {value: 'WHISKY', viewValue: 'Whisky' },
-    {value: 'RED_WINE', viewValue: 'Red wine'},
-    {value: 'WHITE_WINE', viewValue: 'White wine'}];
+    {value: 'WHISKY'},
+    {value: 'RED_WINE'},
+    {value: 'WHITE_WINE'}];
 
   products: Product[];
 
-  constructor(private productService: ProductsService) { }
+  constructor(private productService: ProductsService, private languageService: LanguageService) {
+  }
 
   ngOnInit(): void {
+    this.languageService.initialize();
     this.getProducts();
   }
 

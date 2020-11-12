@@ -7,10 +7,7 @@
         <div class="collapse navbar-collapse show" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" routerLink="/products">Selection d'un produit <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">L'art de la dégustation</a>
+                  <a class="nav-link" routerLink="/products">{{ 'link.products' | translate }} <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -21,7 +18,7 @@
                       <a class="dropdown-item" href="#">fr</a>
                     </div> -->
                     <mat-form-field appearance="fill">
-                      <mat-label>Languages</mat-label>
+                      <mat-label>{{ 'language' | translate }}</mat-label>
                       <select matNativeControl (change)="selectLang($event)">
                         <option *ngFor="let option of languages" [value]="option.value"
                                 [selected]="selectedLang === option.value">{{ option.viewValue }}</option>

@@ -1,0 +1,21 @@
+{
+
+  "link": {
+    "products": "Selection d'un produit"
+  },
+  "language": "Langues",
+  "product": {
+    "type": "Types de produits",
+    "discover": "Decouvrez",
+    "unitprice": "Prix unitaire",
+    "boxprice": "Prix du carton",
+    "certification": "Certification Anor",
+    "ingredients": "Ingredients:"
+  },
+  "BOTTLE": "Bouteilles",
+  "CAN": "Bidon",
+  "SACHET": "Sachet",
+  "WHISKY": "Whisky",
+  "RED_WINE": "Vin rouge",
+  "WHITE_WINE": "Vin blanc"
+}

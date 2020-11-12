@@ -6,11 +6,14 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LanguageService {
 
-  constructor(public translate: TranslateService) { }
+  constructor(public translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.addLangs(['en', 'fr']);
+  }
 
   initialize(): void {
-    this.translate.setDefaultLang('en');
-    this.translate.addLangs(['en', 'fr']);
+    this.translate.use(localStorage.getItem('language')
+    || this.getCurrentLanguage());
   }
 
   setCurrentLanguage(selectLang): void {

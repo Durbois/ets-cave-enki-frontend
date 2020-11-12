@@ -24,8 +24,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.languageService.initialize();
-    this.selectedLang = localStorage.getItem('language')
-    || this.languageService.getCurrentLanguage();
+    this.selectedLang = this.languageService.getCurrentLanguage();
   }
 
   selectLang(event: Event): void {
