@@ -9,7 +9,7 @@
   </div>
   <div class="row">
       <div class="card product-item col-lg-4 col-sm-6" *ngFor="let p of products; let i=index;">
-          <div class="product-image-wrapper text-center">
+          <div class="product-image-wrapper">
             <a [routerLink]="['/products', p.id]">
                 <img src="https://www.bordeaux.com/wp-content/uploads/2020/05/De-Luze-2019-75x300.png" class="card-img-top product-image" alt="...">
             </a>
