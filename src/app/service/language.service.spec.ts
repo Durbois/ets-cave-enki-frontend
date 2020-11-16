@@ -24,7 +24,12 @@ describe('LanguageService', () => {
   it('should test initialize', async () => {
     service.initialize();
 
-    expect(translate.getLangs.length).toEqual(2);
     expect(translate.defaultLang).toBe('en');
+  });
+
+  it('should set current language', async () => {
+    service.setCurrentLanguage('fr');
+
+    expect(translate.currentLang).toBe('fr');
   });
 });
