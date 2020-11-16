@@ -1,31 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light nav-container fixed-top"> <!-- use class fixed-top instead of header__fixed-->
-    <div class="container">
-        <a class="navbar-brand" href="#">LES CAVES D'ENKI</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="ml-md-auto collapse navbar-collapse show" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" routerLink="/products">{{ 'link.products' | translate }} <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Langues
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">en</a>
-                      <a class="dropdown-item" href="#">fr</a>
-                    </div> -->
-                    <mat-form-field appearance="fill">
-                      <mat-label>{{ 'language' | translate }}</mat-label>
-                      <select matNativeControl (change)="selectLang($event)">
-                        <option *ngFor="let option of languages" [value]="option.value"
-                                [selected]="selectedLang === option.value">{{ option.viewValue }}</option>
-                      </select>
-                    </mat-form-field>
-                  </li>
-            </ul>
-        </div>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light nav-container fixed-top">
+  <!-- use class fixed-top instead of header__fixed-->
+  <a class="navbar-brand" href="#">LES CAVES D'ENKI</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse show" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-md-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/products">{{ 'link.products' | translate }} <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'language' | translate }}</mat-label>
+          <select matNativeControl (change)="selectLang($event)">
+            <option *ngFor="let option of languages" [value]="option.value" [selected]="selectedLang === option.value">{{
+              option.viewValue }}</option>
+          </select>
+        </mat-form-field>
+      </li>
+    </ul>
+  </div>
 </nav>
