@@ -1,0 +1,32 @@
+<div class="container product-detail">
+    <div class="product-item">
+        <div class="text-center">
+          <a>
+              <img src="https://www.bordeaux.com/wp-content/uploads/2020/05/De-Luze-2019-75x300.png" class="card-img-top product-image" alt="...">
+          </a>
+        </div>
+        <div class="text-left product-info">
+          <h2 class="product-name">
+              <span>{{product?.name}}</span>
+          </h2>
+          <h3 class="product-contenttype lead">{{product?.contentType | translate}}</h3>
+          <div class="product-certification-link mt-3 mb-3">
+              <h4 class="product-certification-link-title"><u>{{'product.certification' | translate}}</u></h4>
+              <a class="text-decoration-none" href="http://www.anorcameroun.info/produits-certifies/" target="_blank">
+                {{'link.anor' | translate}} ETS LES CAVES D'ENKI</a>
+            </div>
+          <div class="product-ingredients mt-3 mb-3">
+            <h4 class="font-weight-lighter"><u>{{'product.ingredients' | translate}}</u></h4>
+            <p class="product-ingredients-list">{{product?.ingredients}}</p>
+          </div>
+          <div class="product-price">
+            <h3 class="product-price-unit-title">{{'product.unitprice' | translate}}</h3>
+            <div class="product-price-unit">{{product?.unitPrice}}</div>
+          </div>
+          <div class="product-price">
+            <h3 class="product-price-box-title">{{'product.boxprice' | translate}}</h3>
+            <div class="product-price-box">{{product?.boxPrice}}</div>
+          </div>
+        </div>
+      </div>
+</div>

@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from '../service/language.service';
+
+interface Language {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-header',
@@ -7,9 +13,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  languages: Language[] = [
+    {value: 'en', viewValue: 'English'},
+    {value: 'fr', viewValue: 'Français'}
+  ];
+
+  selectedLang: string;
+
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
+    this.languageService.initialize();
+    this.selectedLang = this.languageService.getCurrentLanguage();
   }
 
+  selectLang(event: Event): void {
+    this.selectedLang = (event.target as HTMLSelectElement).value;
+    this.languageService.setCurrentLanguage(this.selectedLang);
+  }
 }
