@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
 import { HttpHeaders, HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 import { Product } from '../models/product';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 
 @Injectable({
