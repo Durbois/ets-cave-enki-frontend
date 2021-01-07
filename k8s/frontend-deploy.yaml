@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cave-enki-frontend
+  name: cave-enki-frontend
+  namespace: cave-enki
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cave-enki-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cave-enki-frontend
+    spec:
+      containers:
+      - image: taghuofongue/cave-enki-frontend:1.2
+        name: cave-enki-frontend
+        imagePullPolicy: IfNotPresent
+        ports:
+          - name: http
+            containerPort: 80
+status: {}
