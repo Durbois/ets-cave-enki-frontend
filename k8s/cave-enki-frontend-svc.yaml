@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cave-enki-frontend
+  name: cave-enki-frontend
+  namespace: cave-enki
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: cave-enki-frontend
+  type: LoadBalancer
+  loadBalancerIP: "35.205.9.253"
+status:
+  loadBalancer: {}

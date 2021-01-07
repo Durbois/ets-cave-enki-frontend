@@ -1,0 +1,21 @@
+{
+  "link": {
+    "products": "Select a product",
+    "anor": "Anor Link"
+  },
+  "language": "Languages",
+  "product": {
+    "type": "Types of products",
+    "discover": "Discover",
+    "unitprice": "Price per unit",
+    "boxprice": "Price per box",
+    "certification": "Anor Certification",
+    "ingredients": "Ingredients:"
+  },
+  "BOTTLE": "Bottles",
+  "CAN": "Cans",
+  "SACHET": "Sachet",
+  "WHISKY": "Whisky",
+  "RED_WINE": "Red wine",
+  "WHITE_WINE": "White wine"
+}

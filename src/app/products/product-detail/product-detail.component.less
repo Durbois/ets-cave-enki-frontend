@@ -1,0 +1,56 @@
+@import url('../../../assets/colors/cave-color.less');
+
+:host {
+
+  .product-detail {
+    margin-top: 112px;
+  }
+
+  .product-image {
+    width: auto;
+    max-width: 100%;
+    height: 290px;
+  }
+
+  .product-info {
+    background: #faf7f2;
+    padding-left: 16px;
+    margin-bottom: 24px;
+  }
+
+  .product-item {
+    border-radius: 0;
+    border: 0;
+  }
+
+  .product-name {
+    font-size: 50px;
+    margin: 5px 0;
+    color: @black-color;
+  }
+
+  .product-contenttype {
+    color: #B79148;
+  }
+
+  .product-ingredients-list {
+    color: @gray-color;
+  }
+
+
+  .product-price .product-price-unit-title,
+  .product-price .product-price-box-title {
+    color: #c2b4a9;
+
+    &::before {
+      content: url("../../../assets/icons/money.svg");
+    }
+  }
+
+  .product-price .product-price-unit,
+  .product-price .product-price-box {
+    background: #ebe3d8;
+    width: 72px;
+    margin-bottom: 16px;
+  }
+}

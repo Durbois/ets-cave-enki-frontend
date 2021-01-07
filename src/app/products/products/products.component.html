@@ -1,0 +1,30 @@
+<div class="container product-view-list">
+  <div class="row">
+    <mat-form-field class="col-md-4" appearance="fill">
+      <mat-label>{{ 'product.type' | translate }}</mat-label>
+      <mat-select [formControl]="toppings" [multiple]="true" (selectionChange)="applyChangeDetection()">
+        <mat-option *ngFor="let topping of toppingList" [value]="topping.value">{{topping.value | translate}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <div class="card product-item col-lg-4 col-sm-6" *ngFor="let p of products; let i=index;">
+      <div class="text-center">
+        <a [routerLink]="['/products', p.id]">
+          <img src="https://www.bordeaux.com/wp-content/uploads/2020/05/De-Luze-2019-75x300.png" class="card-img-top product-image"
+            alt="...">
+        </a>
+      </div>
+      <div class="card-body text-center product-info">
+        <h2 class="card-title product-name">
+          <a [routerLink]="['/product', p.id]" class="product-name-link">
+            <span>{{p.name}}</span>
+          </a>
+        </h2>
+        <h3 class="product-contenttype lead">{{p.contentType | translate}}</h3>
+        <a class="btn btn-primary btn-lg product-btn-link" [routerLink]="['/products', p.id]">{{'product.discover' |
+          translate}}</a>
+      </div>
+    </div>
+  </div>
+</div>
