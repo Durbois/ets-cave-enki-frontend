@@ -14,6 +14,6 @@ spec:
   selector:
     app: cave-enki-frontend
   type: LoadBalancer
-  loadBalancerIP: "35.187.163.19"
+  loadBalancerIP: "35.205.9.253"
 status:
   loadBalancer: {}
