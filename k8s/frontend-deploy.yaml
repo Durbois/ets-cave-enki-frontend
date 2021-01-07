@@ -19,7 +19,7 @@ spec:
         app: cave-enki-frontend
     spec:
       containers:
-      - image: taghuofongue/cave-enki-frontend:1.2
+      - image: taghuofongue/cave-enki-frontend
         name: cave-enki-frontend
         imagePullPolicy: IfNotPresent
         ports:
