@@ -1,6 +1,25 @@
+@import url('../assets/colors/cave-color.less');
 
 :host {
   /* .wrapper {
     min-height: calc(100vh - 50px);
   } */
+
+  .header {
+    background: linear-gradient(90deg, @white-wine 0%, @red-wine 100%);
+
+    & .header-title {
+      color: @gray-color;
+      text-decoration: none;
+      font-size: medium;
+    }
+
+    & .icon-menu {
+      font-size: 30px;
+    }
+  }
+
+  ::ng-deep .mat-toolbar-row, .mat-toolbar-single-row {
+    height: 90px;
+  }
 }

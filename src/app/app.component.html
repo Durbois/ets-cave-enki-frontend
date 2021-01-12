@@ -1,5 +1,27 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-footer></app-footer> -->
+
+<mat-toolbar class="header d-flex">
+  <button mat-icon-button class="mr-3" aria-label="icon button with a menu icon">
+    <mat-icon class="icon-menu">menu</mat-icon>
+  </button>
+  <a href="#" class="header-title mr-auto">LES CAVES D'ENKI</a>
+  <button mat-icon-button class="mr-3" [matMenuTriggerFor]="languages" aria-label="icon-button for languages">
+    <mat-icon class="icon-menu">language</mat-icon>
+  </button>
+  <mat-menu #languages="matMenu">
+    <ng-template matMenuContent>
+      <button mat-menu-item matRipple [matRippleCentered]="true" (click)="selectLang('fr')">
+        <span>Français</span>
+      </button>
+      <button mat-menu-item (click)="selectLang('en')">
+        <span>English</span>
+      </button>
+  </ng-template>
+  </mat-menu>
+
+
+</mat-toolbar>
 
 
