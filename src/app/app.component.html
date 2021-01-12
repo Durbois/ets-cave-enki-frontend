@@ -7,7 +7,9 @@
     <mat-icon class="icon-menu">menu</mat-icon>
   </button>
   <a href="#" class="header-title mr-auto">LES CAVES D'ENKI</a>
-  <button mat-icon-button class="mr-3" [matMenuTriggerFor]="languages" aria-label="icon-button for languages">
+  <button mat-icon-button class="mr-3" [matMenuTriggerFor]="languages"
+    aria-label="icon-button for languages" [matTooltip]="'language' | translate"
+    matTooltipPosition="above">
     <mat-icon class="icon-menu">language</mat-icon>
   </button>
   <mat-menu #languages="matMenu">

@@ -32,9 +32,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { A11yModule } from '@angular/cdk/a11y';
 
 
 const materialModules = [
+  A11yModule,
   CdkTreeModule,
   MatAutocompleteModule,
   MatButtonModule,
