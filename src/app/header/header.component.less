@@ -1,39 +1,32 @@
 @import url('../../assets/colors/cave-color.less');
 
-::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-  color: #B3A69C;
-}
-
-::ng-deep .mat-primary .mat-pseudo-checkbox-checked,
-          .mat-primary .mat-pseudo-checkbox-indeterminate {
-  background: #B3A69C;
-}
-
 :host {
-  .nav-container {
+  /* .wrapper {
+    min-height: calc(100vh - 50px);
+  } */
+
+  .header {
     background: linear-gradient(90deg, @white-wine 0%, @red-wine 100%);
+
+    & .header-title {
+      color: @gray-color;
+      text-decoration: none;
+      font-size: medium;
+    }
+
+    & .icon-menu {
+      font-size: 30px;
+    }
   }
 
-  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before {
-    height: 0px;
+  ::ng-deep .mat-toolbar-row, .mat-toolbar-single-row {
+    height: 90px;
   }
 
-  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-ripple {
-    height: 0px;
-  }
-
-  ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-    color: @black-color;
-  }
-
-  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-    border: 2px solid #d7cec9;
-    background: linear-gradient(90deg, @white-wine 0%, @red-wine 100%);
-    width: 70%;
-  }
-
-  ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow,
-  ::ng-deep .mat-select-arrow {
-    color: @black-color;
+  @media screen and (min-width: 768px) {
+    /* enter some CSS */
+    ::ng-deep .mat-toolbar-row, .mat-toolbar-single-row {
+      height: 60px;
+    }
   }
 }

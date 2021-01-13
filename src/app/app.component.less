@@ -1,25 +1,33 @@
-@import url('../assets/colors/cave-color.less');
+
 
 :host {
-  /* .wrapper {
-    min-height: calc(100vh - 50px);
-  } */
 
-  .header {
-    background: linear-gradient(90deg, @white-wine 0%, @red-wine 100%);
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
-    & .header-title {
-      color: @gray-color;
-      text-decoration: none;
-      font-size: medium;
-    }
-
-    & .icon-menu {
-      font-size: 30px;
+    & .sidenav-container {
+      flex: 1;
     }
   }
 
-  ::ng-deep .mat-toolbar-row, .mat-toolbar-single-row {
-    height: 90px;
+  ::ng-deep .mat-drawer-inner-container {
+    width: 200px !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    /* enter some CSS */
+    ::ng-deep .mat-toolbar-row, .mat-toolbar-single-row {
+      height: 60px;
+    }
+
+    ::ng-deep .mat-drawer-inner-container {
+      width: 300px !important;
+    }
   }
 }
