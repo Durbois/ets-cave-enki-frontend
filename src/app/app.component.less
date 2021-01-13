@@ -1,4 +1,4 @@
-
+@import url('../assets/colors/cave-color.less');
 
 :host {
 
@@ -16,8 +16,22 @@
     }
   }
 
+  .icon-close {
+    font-size: 50px;
+  }
+
+  .router-link {
+    color: @gray-color;
+    font-size: 25px;
+  }
+
   ::ng-deep .mat-drawer-inner-container {
     width: 200px !important;
+  }
+
+  ::ng-deep .mat-drawer {
+    background: @white-wine;
+    color: @gray-color;
   }
 
   @media screen and (min-width: 768px) {
