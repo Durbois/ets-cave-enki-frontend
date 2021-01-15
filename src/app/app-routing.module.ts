@@ -1,14 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { JobsOfferComponent } from './jobs-offer/jobs-offer.component';
+import { PresentationComponent } from './presentation/presentation.component';
 
 const routes: Routes = [
   {
     path: 'products',
     loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
   },
+  {
+    path: 'jobs',
+    component: JobsOfferComponent
+  },
+  {
+    path: 'home',
+    component: PresentationComponent
+  },
   { path: '',
-    redirectTo: '/products',
+    redirectTo: '/home',
     pathMatch: 'full'
   }
 ];

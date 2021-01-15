@@ -13,6 +13,8 @@ import { environment } from '../environments/environment';
 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { JobsOfferComponent } from './jobs-offer/jobs-offer.component';
+import { PresentationComponent } from './presentation/presentation.component';
 
 // tslint:disable-next-line:typedef
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -23,7 +25,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [
     HeaderComponent,
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    PresentationComponent,
+    JobsOfferComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,6 @@
 <!--
 
 <app-footer></app-footer> -->
-
 <div class="app-container" [class.container-is-mobile]="mobileQuery.matches">
     <app-header [sidenav]="snav" class="container-toolbar"></app-header>
 
@@ -12,9 +11,25 @@
           <button class="ml-5 mb-5" *ngIf="mobileQuery.matches" (click)="snav.toggle()" mat-icon-button aria-label="icon button with a close icon">
             <mat-icon class="icon-close">close</mat-icon>
           </button>
-          <a class="align-self-center router-link" mat-list-item routerLink="/products">{{'link.presentation' | translate}}</a>
-          <a class="align-self-center router-link" mat-list-item routerLink="/products">{{'link.products' | translate}}</a>
-          <a class="align-self-center router-link" mat-list-item routerLink="/products">{{'link.job' | translate}}</a>
+          <a (click)="snav.close()" class="align-self-center router-link" [class.link-is-selected]="'/home' === currentUrl"
+          mat-list-item routerLink="/home">{{'link.presentation' | translate}}</a>
+          <a (click)="snav.close()" class="align-self-center router-link" [class.link-is-selected]="'/products' === currentUrl"
+          mat-list-item routerLink="/products">{{'link.products' | translate}}</a>
+          <a (click)="snav.close()" class="align-self-center router-link" [class.link-is-selected]="'/jobs' === currentUrl"
+          mat-list-item routerLink="/jobs">{{'link.job' | translate}}</a>
+          <mat-divider></mat-divider>
+
+          <div class="d-flex flex-column pt-5">
+            <span class="mb-2 align-self-center">&copy;{{year}} ETS LES CAVES D'ENKI</span>
+            <a href="mailto:etscaveenki@yahoo.de" class="mb-2 align-self-center">
+              <mat-icon class="footer-icon">alternate_email</mat-icon>
+              <span>etscaveenki@yahoo.de</span>
+            </a>
+            <a href="tel:+237677291817" class="mb-2 align-self-center">
+              <mat-icon class="footer-icon">phone</mat-icon>
+              <span>+237677291817</span>
+            </a>
+          </div>
         </mat-nav-list>
       </mat-sidenav>
 
