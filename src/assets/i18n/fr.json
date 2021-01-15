@@ -1,7 +1,9 @@
 {
   "link": {
     "products": "Selection d'un produit",
-    "anor": "Lien anor"
+    "anor": "Lien anor",
+    "presentation": "Notre societe",
+    "job": "Offres d'emploi"
   },
   "language": "Langues",
   "product": {
