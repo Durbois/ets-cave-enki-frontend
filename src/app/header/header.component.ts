@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   @Input()
   sidenav: MatSidenav;
 
-  constructor(private languageService: LanguageService) { }
+  constructor(public languageService: LanguageService) { }
 
   ngOnInit(): void {
     this.languageService.initialize();

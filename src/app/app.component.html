@@ -11,11 +11,11 @@
           <button class="ml-5 mb-5" *ngIf="mobileQuery.matches" (click)="snav.toggle()" mat-icon-button aria-label="icon button with a close icon">
             <mat-icon class="icon-close">close</mat-icon>
           </button>
-          <a (click)="snav.close()" class="align-self-center router-link" [class.link-is-selected]="'/home' === currentUrl"
+          <a (click)="mobileQuery.matches ? snav.close() : ''" class="align-self-center router-link" [class.link-is-selected]="'/home' === currentUrl"
           mat-list-item routerLink="/home">{{'link.presentation' | translate}}</a>
-          <a (click)="snav.close()" class="align-self-center router-link" [class.link-is-selected]="'/products' === currentUrl"
+          <a (click)="mobileQuery.matches ? snav.close() : ''" class="align-self-center router-link" [class.link-is-selected]="'/products' === currentUrl"
           mat-list-item routerLink="/products">{{'link.products' | translate}}</a>
-          <a (click)="snav.close()" class="align-self-center router-link" [class.link-is-selected]="'/jobs' === currentUrl"
+          <a (click)="mobileQuery.matches ? snav.close() : ''" class="align-self-center router-link" [class.link-is-selected]="'/jobs' === currentUrl"
           mat-list-item routerLink="/jobs">{{'link.job' | translate}}</a>
           <mat-divider></mat-divider>
 

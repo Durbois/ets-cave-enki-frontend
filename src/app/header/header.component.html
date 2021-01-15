@@ -10,10 +10,10 @@
   </button>
   <mat-menu #languages="matMenu">
     <ng-template matMenuContent>
-      <button mat-menu-item matRipple [matRippleCentered]="true" (click)="selectLang('fr')">
+      <button [class.current-language-selected]="'fr' === languageService.getCurrentLanguage()" mat-menu-item matRipple [matRippleCentered]="true" (click)="selectLang('fr')">
         <span>Français</span>
       </button>
-      <button mat-menu-item (click)="selectLang('en')">
+      <button [class.current-language-selected]="'en' === languageService.getCurrentLanguage()" mat-menu-item (click)="selectLang('en')">
         <span>English</span>
       </button>
   </ng-template>
